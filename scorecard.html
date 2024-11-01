@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            border: 2px solid red;
+            width: 200px;
+            height: 200px;
+            margin-top: 15%;
+            margin-left:45%;
+            text-align: center;
+            background-color: rgb(53, 71, 65, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>score card</h1>
+        <table>
+            <tr>
+                <td id="s1">arnav</td>
+                <td id="m1">0</td>
+            </tr>
+            <tr>
+                <td id="s2">abinav</td>
+                <td id="m2">0</td>
+            </tr>
+            <tr>
+                <td><button id="b1" style="background-color: rgb(21, 21, 239);color: azure;">tap1</button></td>
+                <td><button id="b2" style="background-color: rgb(21, 21, 239);color: azure;">tap2</button></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        let student1="arnav";
+        let student2="abinav";
+        let mark1=0;
+        let mark2=0;
+        document.getElementById("b1").onclick=function(){
+            mark1=mark1+1;
+            document.getElementById("m1").innerHTML=mark1;
+            newest();
+        }
+        document.getElementById("b2").onclick=function(){
+            mark2=mark2+1;
+            document.getElementById("m2").innerHTML=mark2;
+            newest();
+        }
+        function newest(){
+              if(mark1>=mark2){
+                document.getElementById("s1").innerHTML=student1;
+                document.getElementById("m1").innerHTML=mark1;
+                document.getElementById("s2").innerHTML=student2;
+                document.getElementById("m2").innerHTML=mark2;
+              }
+              else if(mark1<mark2){
+                document.getElementById("s1").innerHTML=student2;
+                document.getElementById("m1").innerHTML=mark2;
+                document.getElementById("s2").innerHTML=student1;
+                document.getElementById("m2").innerHTML=mark1;
+              }
+        }
+    </script>
+</body>
+</html>
